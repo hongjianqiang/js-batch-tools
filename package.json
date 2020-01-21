@@ -1,0 +1,28 @@
+{
+  "name": "js-batch-tools",
+  "version": "1.0.0",
+  "description": "JS代码批处理工具",
+  "scripts": {
+    "clear": "rimraf ./output && mkdir output \n" ,
+    "build": "npm run clear && babel input -d output \n",
+    "watch": "chokidar '.babelrc.js' './plugins' './input' -c 'npm run build' \n"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hongjianqiang/js-batch-tools.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hongjianqiang/js-batch-tools/issues"
+  },
+  "homepage": "https://github.com/hongjianqiang/js-batch-tools#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.6.4",
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "chokidar-cli": "^2.1.0",
+    "rimraf": "^3.0.0"
+  }
+}
