@@ -4,8 +4,9 @@
   "description": "JS代码批处理工具",
   "scripts": {
     "clear": "rimraf ./output && mkdir output \n",
-    "build": "npm run clear && babel input -d output \n",
-    "watch": "chokidar '.babelrc.js' './plugins' './input' -c 'npm run build' \n"
+    "build": "babel input -d output \n",
+    "watch": "chokidar '.babelrc.js' './plugins' './input' -c 'npm run build' \n",
+    "ts-watch": "chokidar '.babelrc.js' './ts-plugins' './input' -c 'tsc && npm run build' \n"
   },
   "repository": {
     "type": "git",
@@ -26,5 +27,6 @@
     "chokidar-cli": "^2.1.0",
     "rimraf": "^3.0.0",
     "typescript": "^3.7.3"
-  }
+  },
+  "dependencies": {}
 }
